@@ -1,0 +1,25 @@
+type Token @entity {
+  # contract address
+  id: ID!
+
+  symbol: String!
+  name: String!
+  decimals: BigInt!
+  totalSupply: BigInt!
+}
+
+type Geyser @entity {
+  # contract address
+  id: ID!
+
+  # config
+  stakingToken: Token!
+  rewardToken: Token!
+
+  bonusMin: BigInt!
+  bonusMax: BigInt!
+  bonusPeriod: BigInt!
+
+  createdTimestamp: BigInt!
+  createdBlock: BigInt!
+}
